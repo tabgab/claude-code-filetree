@@ -11,6 +11,20 @@
   <img src="https://img.shields.io/badge/license-MIT-green" alt="License">
 </p>
 
+## This fork
+
+This is a fork of [data-goblin/claude-code-filetree](https://github.com/data-goblin/claude-code-filetree) with two changes. Both are offered upstream in [PR #8](https://github.com/data-goblin/claude-code-filetree/pull/8).
+
+- **Diff view for changed files.** Double-click or Enter on a file with git changes asks **Diff view** or **Open in app**. Diff view shows the file's diff against `HEAD` in the pane, and the `text`/`diff` header button switches between the file and its diff. An untracked file shows as all additions, and a deleted file opens straight in its diff.
+- **The tree folds instead of closing.** In the original, the tree closed itself when the terminal became too narrow for the sidebar, and stayed closed until `/filetree` ran again. This fork folds it to a `▸ show files` bar above the prompt and moves it back to the sidebar when the terminal is wide enough. `▾ hide` in the header folds it on demand.
+
+To install the fork instead of the original, remove the original marketplace first (`claude plugin marketplace remove claude-code-filetree`), then:
+
+```bash
+claude plugin marketplace add tabgab/claude-code-filetree
+claude plugin install filetree@claude-code-filetree
+```
+
 <p align="center">
   <img src="media/filetree-shimmer.gif" alt="filetree shimmering the file Claude is editing" width="900">
 </p>
